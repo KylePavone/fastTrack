@@ -10,6 +10,11 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: ConferenceRepository::class)]
 class Conference
 {
+    public function __toString(): string
+    {
+        return $this->city . ' ' . $this->year;
+    }
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
